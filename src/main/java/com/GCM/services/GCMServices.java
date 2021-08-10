@@ -71,6 +71,14 @@ public class GCMServices {
 		List<HospitalisationV> hospitalisationVS =hospitalisationVRepository.findAll();
 
 		return hospitalisationVS ;}
+	public HospitalisationV updateHospitalisationV(HospitalisationV hospitalisationV){
+		return hospitalisationVRepository.save(hospitalisationV);
+	}
+	public HospitalisationV findHospitalisationVById(Long id){
+		return hospitalisationVRepository.findHospitalisationVById(id).orElseThrow(()-> new UserNotFoundException("Patient by id "+id+ "was not found"));
+	}
+	public void deleteHospitalisationV(Long id){
+		hospitalisationVRepository.deleteHospitalisationVById(id);}
 	//AnnalyseV
 	public AnnalyseV addAnnalyseV (AnnalyseV annalyseV) {
 		return (AnnalyseV) annalyseVRepository.save(annalyseV);
@@ -81,6 +89,8 @@ public class GCMServices {
 
 		return annalyseVS ;
 	}
+	public void deleteAnnalyseV(Long id){
+		annalyseVRepository.deleteAnnalyseVById(id);}
 	//VisitePM
     public VisitePM addVisitePM (VisitePM  visitePM) {
 		return visitePMRepository.save(visitePM);
@@ -91,6 +101,14 @@ public class GCMServices {
 		
 		return visitePMs;
 	}
+	public VisitePM updateVisitePM(VisitePM visitePM){
+		return visitePMRepository.save(visitePM);
+	}
+	public VisitePM findVisitePMById(Long id){
+		return visitePMRepository.findVisitePMById(id).orElseThrow(()-> new UserNotFoundException("Patient by id "+id+ "was not found"));
+	}
+	public void deleteVisitePM(Long id){
+		visitePMRepository.deleteVisitePMById(id);}
     
 	
 	//OrdonanceMV
@@ -105,11 +123,18 @@ public class GCMServices {
 		
 		return MV;
 	}
+	public OrdonanceMV updateOrdonanceMV(OrdonanceMV ordonanceMV){
+		return ordonanceMVRepository.save(ordonanceMV);
+	}
+	public OrdonanceMV findOrdonanceMVById(Long id){
+		return ordonanceMVRepository.findOrdonanceMVById(id).orElseThrow(()-> new UserNotFoundException("Patient by id "+id+ "was not found"));
+	}
+	public void deleteOrdonanceMV(Long id){
+		ordonanceMVRepository.deleteOrdonanceMVById(id);}
 	
 	// PatientDesease
 	public PatientDesease addPatientDesease(PatientDesease pa) {
-		System.err.println(pa.getPatient());
-		System.err.println(pa.getAntcedent());
+
 		
 		return patientDeseaseRepository.save(pa);
 		
@@ -130,10 +155,9 @@ public class GCMServices {
 	    public void deletePatientDesease(Long id){
 	    	patientDeseaseRepository.deletePatientDeseaseById(id);}
 	
-	//Patient MedecinPH
+	// MedecinPH
 	public MedecinPH addMedecinPH(MedecinPH medecinPh) {
-		System.err.println(medecinPh.getMedecin());
-		System.err.println(medecinPh.getPlage_Horaire());
+
 		
 		return medecinPHRepository.save(medecinPh);
 		
@@ -143,6 +167,14 @@ public class GCMServices {
 		
 		return MPH;
 	}
+	public MedecinPH updateMedecinPH(MedecinPH medecinPH){
+		return medecinPHRepository.save(medecinPH);
+	}
+	public MedecinPH findMedecinPHById(Long id){
+		return medecinPHRepository.findMedecinPHById(id).orElseThrow(()-> new UserNotFoundException("Patient by id "+id+ "was not found"));
+	}
+	public void deleteMedecinPH(Long id){
+		medecinPHRepository.deleteMedecinPHById(id);}
 	
 	//Visite Service
 

@@ -29,6 +29,7 @@ public class OrdonanceMV {
 		private Ordonance ordonance;
 		
 		@ManyToOne(fetch = FetchType.LAZY)
+		@Cascade(CascadeType.ALL)
 		private VisitePM visitepm ;
 
 		public OrdonanceMV() {

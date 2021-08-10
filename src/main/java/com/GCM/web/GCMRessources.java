@@ -40,6 +40,24 @@ public class GCMRessources {
 
         return new ResponseEntity<>(hospitalisationVS , HttpStatus.OK);
     }
+    @GetMapping("/HOV/find/{id}")
+    public ResponseEntity<HospitalisationV> getHospitalisationVById(@PathVariable("id") Long id) {
+        HospitalisationV patient = gcmServices.findHospitalisationVById(id);
+        return new ResponseEntity<>(patient, HttpStatus.OK);
+    }
+
+
+    @PutMapping("/HOV/update")
+    public ResponseEntity<HospitalisationV> updateHospitalisationV(@RequestBody HospitalisationV hospitalisationV) {
+        HospitalisationV updatehospitalisationV = gcmServices.updateHospitalisationV(hospitalisationV);
+        return new ResponseEntity<>(updatehospitalisationV, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/HOV/delete/{id}")
+    public ResponseEntity<?> deleteHospitalisationV(@PathVariable("id") Long id) {
+        gcmServices.deleteHospitalisationV(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
     //AnnalyseV
     @PostMapping("/ANNV/add")
     public ResponseEntity<AnnalyseV> addAnnalyseV(@RequestBody AnnalyseV annalyseV) {
@@ -53,6 +71,10 @@ public class GCMRessources {
 
         return new ResponseEntity<>(annalyseVS , HttpStatus.OK);
     }
+    @DeleteMapping("/ANNV/delete/{id}")
+    public ResponseEntity<?> deleteAnnalyseV(@PathVariable("id") Long id) {
+        gcmServices.deleteAnnalyseV(id);
+        return new ResponseEntity<>(HttpStatus.OK);}
 
     //VisitePM
     @PostMapping("/VP/add")
@@ -68,6 +90,26 @@ public class GCMRessources {
         return new ResponseEntity<>(visitePMs, HttpStatus.OK);
     }
 
+    @GetMapping("/VPM/find/{id}")
+    public ResponseEntity<VisitePM> getVisitePMById(@PathVariable("id") Long id) {
+        VisitePM visitePM = gcmServices.findVisitePMById(id);
+        return new ResponseEntity<>(visitePM, HttpStatus.OK);
+    }
+
+
+    @PutMapping("/VPM/update")
+    public ResponseEntity<VisitePM> updateVisitePM(@RequestBody VisitePM visitePM) {
+        VisitePM updatevisitePM = gcmServices.updateVisitePM(visitePM);
+        return new ResponseEntity<>(updatevisitePM, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/VPM/delete/{id}")
+    public ResponseEntity<?> deleteVisitePM(@PathVariable("id") Long id) {
+        gcmServices.deleteVisitePM(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
     //PatientDesea
     @PostMapping("/PA/add")
     public ResponseEntity<PatientDesease> addPA(@RequestBody PatientDesease pa) {
@@ -78,7 +120,7 @@ public class GCMRessources {
     @GetMapping("/PA/all")
     public ResponseEntity<List<PatientDesease>> getAllPatientDesease() {
         List<PatientDesease> patientDeseases = gcmServices.findAllPatientDeseases();
-        System.err.println("patient with deseases : " + patientDeseases);
+
         return new ResponseEntity<>(patientDeseases, HttpStatus.OK);
     }
 
@@ -113,6 +155,24 @@ public class GCMRessources {
         List<OrdonanceMV> ordonanceMVs = gcmServices.findAllOrdonanceMV();
         return new ResponseEntity<>(ordonanceMVs, HttpStatus.OK);
     }
+    @GetMapping("/OMV/find/{id}")
+    public ResponseEntity<OrdonanceMV> getOrdonanceMVById(@PathVariable("id") Long id) {
+        OrdonanceMV ordonanceMV = gcmServices.findOrdonanceMVById(id);
+        return new ResponseEntity<>(ordonanceMV , HttpStatus.OK);
+    }
+
+
+    @PutMapping("/OMV/update")
+    public ResponseEntity<OrdonanceMV> updateOrdonanceMV(@RequestBody OrdonanceMV ordonanceMV ) {
+        OrdonanceMV updateordonanceMV  = gcmServices.updateOrdonanceMV(ordonanceMV );
+        return new ResponseEntity<>(updateordonanceMV , HttpStatus.OK);
+    }
+
+    @DeleteMapping("/OMV/delete/{id}")
+    public ResponseEntity<?> deleteOrdonanceMV(@PathVariable("id") Long id) {
+        gcmServices.deleteOrdonanceMV(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
     //MedecinPH
     @PostMapping("/MedecinPH/add")
@@ -125,6 +185,24 @@ public class GCMRessources {
     public ResponseEntity<List<MedecinPH>> getAllMedecinMV() {
         List<MedecinPH> medecinPHs = gcmServices.findAllMedecinPH();
         return new ResponseEntity<>(medecinPHs, HttpStatus.OK);
+    }
+    @GetMapping("/MedecinPH/find/{id}")
+    public ResponseEntity<MedecinPH> getMedecinPHById(@PathVariable("id") Long id) {
+        MedecinPH medecinPH = gcmServices.findMedecinPHById(id);
+        return new ResponseEntity<>(medecinPH, HttpStatus.OK);
+    }
+
+
+    @PutMapping("/MedecinPH/update")
+    public ResponseEntity<MedecinPH> updateMedecinPH(@RequestBody MedecinPH medecinPH) {
+        MedecinPH medecinPH1 = gcmServices.updateMedecinPH(medecinPH);
+        return new ResponseEntity<>(medecinPH1, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/MedecinPH/delete/{id}")
+    public ResponseEntity<?> deleteMedecinPH(@PathVariable("id") Long id) {
+        gcmServices.deleteMedecinPH(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     // Hospitalisation Ressources

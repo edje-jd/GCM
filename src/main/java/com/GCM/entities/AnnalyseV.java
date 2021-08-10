@@ -21,6 +21,7 @@ public class AnnalyseV {
 
 
         @ManyToOne(fetch = FetchType.LAZY)
+        @Cascade(org.hibernate.annotations.CascadeType.ALL)
         private VisitePM visitePM ;
 
     public AnnalyseV() {

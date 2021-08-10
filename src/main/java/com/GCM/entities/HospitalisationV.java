@@ -18,6 +18,7 @@ public class HospitalisationV {
         private Hospitalisation hospitalisation ;
 
         @ManyToOne(fetch = FetchType.LAZY)
+        @Cascade(org.hibernate.annotations.CascadeType.ALL)
         private VisitePM visitePM ;
 
     public HospitalisationV() {

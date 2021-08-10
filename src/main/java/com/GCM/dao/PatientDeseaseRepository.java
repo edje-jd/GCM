@@ -9,11 +9,11 @@ import com.GCM.entities.PatientDesease;
 
 public interface PatientDeseaseRepository extends JpaRepository<PatientDesease, Long> {
 
-void deletePatientDeseaseById(Long id);
+    void deletePatientDeseaseById(Long id);
 
 
 
-Optional<PatientDesease> findPatientDeseaseById(Long id);
+    Optional<PatientDesease> findPatientDeseaseById(Long id);
 	
 	
 	
