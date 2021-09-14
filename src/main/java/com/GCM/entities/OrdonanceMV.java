@@ -29,7 +29,7 @@ public class OrdonanceMV {
 		private Ordonance ordonance;
 		
 		@ManyToOne(fetch = FetchType.LAZY)
-		@Cascade(CascadeType.ALL)
+		@Cascade(CascadeType.MERGE)
 		private VisitePM visitepm ;
 
 		public OrdonanceMV() {

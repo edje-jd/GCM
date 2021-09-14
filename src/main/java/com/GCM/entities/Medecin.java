@@ -34,14 +34,39 @@ public class Medecin {
     private int id;
     private String name;
     private String specialicite ;
+    private int numPhone ;
+    private String email;
     
     
 
-	public Medecin(String name, String specialicite) {
+
+
+	public Medecin(String name, String specialicite, int numPhone, String email) {
 		super();
 		this.name = name;
 		this.specialicite = specialicite;
-		
+		this.numPhone = numPhone;
+		this.email = email;
+	}
+	
+
+	public int getNumPhone() {
+		return numPhone;
+	}
+
+
+	public void setNumPhone(int numPhone) {
+		this.numPhone = numPhone;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 

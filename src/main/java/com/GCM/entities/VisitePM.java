@@ -29,7 +29,7 @@ public class VisitePM {
 			
 			
 			@ManyToOne(fetch = FetchType.EAGER)
-			@Cascade(CascadeType.ALL)
+			@Cascade(CascadeType.MERGE)
 			private Patient patient;
 			
 			@ManyToOne(fetch = FetchType.LAZY)

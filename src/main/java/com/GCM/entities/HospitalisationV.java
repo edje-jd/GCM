@@ -18,7 +18,7 @@ public class HospitalisationV {
         private Hospitalisation hospitalisation ;
 
         @ManyToOne(fetch = FetchType.LAZY)
-        @Cascade(org.hibernate.annotations.CascadeType.ALL)
+        @Cascade((org.hibernate.annotations.CascadeType.MERGE))
         private VisitePM visitePM ;
 
     public HospitalisationV() {

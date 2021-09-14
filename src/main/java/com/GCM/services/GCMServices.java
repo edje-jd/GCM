@@ -99,6 +99,7 @@ public class GCMServices {
     public List<VisitePM> findAllVisitePM(){
 		List<VisitePM> visitePMs =visitePMRepository.findAll();
 		
+		
 		return visitePMs;
 	}
 	public VisitePM updateVisitePM(VisitePM visitePM){

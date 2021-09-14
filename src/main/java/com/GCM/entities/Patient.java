@@ -35,9 +35,11 @@ public class Patient {
     private int id;
     private String name;
     private String phone;
-    private Date date_naissance ;
+    private int Age;
     private String sexe ;
     private String adresse ;
+    private String antecedent;
+    
     
     
 //   
@@ -59,15 +61,59 @@ public class Patient {
 
 
 
-	public Patient(String name, String phone, Date date_naissance, String sexe, String adresse) {
-		super();
-		this.name = name;
-		this.phone = phone;
-		this.date_naissance = date_naissance;
-		this.sexe = sexe;
-		this.adresse = adresse;
 
+
+	
+
+
+
+
+
+	public Patient(String name, String phone, int age, String sexe, String adresse, String antecedent) {
+	super();
+	this.name = name;
+	this.phone = phone;
+	Age = age;
+	this.sexe = sexe;
+	this.adresse = adresse;
+	this.antecedent = antecedent;
+}
+
+
+
+
+
+
+
+
+
+
+
+	public String getAntecedent() {
+		return antecedent;
 	}
+
+
+
+
+
+
+
+
+
+
+
+	public void setAntecedent(String antecedent) {
+		this.antecedent = antecedent;
+	}
+
+
+
+
+
+
+
+
 
 
 
@@ -95,13 +141,23 @@ public class Patient {
 		this.phone = phone;
 	}
 
-	public Date getDate_naissance() {
-		return date_naissance;
+	
+
+	public int getAge() {
+		return Age;
 	}
 
-	public void setDate_naissance(Date date_naissance) {
-		this.date_naissance = date_naissance;
+
+
+
+
+	public void setAge(int age) {
+		Age = age;
 	}
+
+
+
+
 
 	public String getSexe() {
 		return sexe;

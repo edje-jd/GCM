@@ -38,6 +38,7 @@ public class Visite {
 	private String type_visite ;
 	private Date date_der_con ;
 	private float prix_cons ;
+	private boolean effectue ;
 
 
 
@@ -46,13 +47,35 @@ public class Visite {
 			super();
 		}
 
-	public Visite(Date date_visit, String objet_visit, String type_visite, Date date_der_con, float prix_cons) {
+	
+
+	public Visite(Date date_visit, String objet_visit, String type_visite, Date date_der_con, float prix_cons,
+			boolean effectue) {
+		super();
 		this.date_visit = date_visit;
 		this.objet_visit = objet_visit;
 		this.type_visite = type_visite;
 		this.date_der_con = date_der_con;
 		this.prix_cons = prix_cons;
+		this.effectue = effectue;
 	}
+
+
+
+	
+
+
+	public boolean isEffectue() {
+		return effectue;
+	}
+
+
+
+	public void setEffectue(boolean effectue) {
+		this.effectue = effectue;
+	}
+
+
 
 	public String getType_visite() {
 		return type_visite;
@@ -78,8 +101,8 @@ public class Visite {
 		this.prix_cons = prix_cons;
 	}
 
-	public Date getDate_visit() {
-			return date_visit;
+	public Long getDate_visit() {
+			return date_visit.getTime();
 		}
 
 

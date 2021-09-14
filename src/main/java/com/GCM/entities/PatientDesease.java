@@ -26,18 +26,14 @@ public class PatientDesease {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	
 
-
-	private Antecedent antcedent;
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@Cascade(CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@Cascade({CascadeType.ALL,CascadeType.MERGE})
 
 	private Patient patient;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	private Localisation localisation ;
+	
 
 
 
@@ -46,13 +42,9 @@ public class PatientDesease {
 	}
 
 
-	public Localisation getLocalisation() {
-		return localisation;
-	}
 
-	public void setLocalisation(Localisation localisation) {
-		this.localisation = localisation;
-	}
+
+	
 
 	public long getId() {
 		return id;
@@ -62,13 +54,7 @@ public class PatientDesease {
 		this.id = id;
 	}
 
-	public Antecedent getAntcedent() {
-		return antcedent;
-	}
-
-	public void setAntcedent(Antecedent antcedent) {
-		this.antcedent = antcedent;
-	}
+	
 
 	public Patient getPatient() {
 		return patient;
